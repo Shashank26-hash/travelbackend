@@ -1,10 +1,18 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const userRoute = require("./routes/users");
 const pinRoute = require("./routes/pins");
 const PORT = process.env.PORT || 8800
+
+
+const corsOptions = {
+  origin: 'https://boisterous-eclair-c6c7fa.netlify.app/',
+};
+
+app.use(cors(corsOptions));
 
 dotenv.config();
 
