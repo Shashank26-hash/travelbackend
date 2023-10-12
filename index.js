@@ -8,11 +8,12 @@ const pinRoute = require("./routes/pins");
 const PORT = process.env.PORT || 8800
 
 
-const corsOptions = {
-  origin: 'https://boisterous-eclair-c6c7fa.netlify.app/',
-};
 
-app.use(cors(corsOptions));
+app.use(cors(
+  {
+    origin: ["http://localhost:3000", "https://travel-react-frontend.onrender.com"], 
+  }
+));
 
 dotenv.config();
 
